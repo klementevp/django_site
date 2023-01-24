@@ -12,11 +12,13 @@ class WomenAdmin(admin.ModelAdmin):
     list_filter = ('is_published', 'time_create')
     prepopulated_fields = {"slug": ("title",)}
 
+
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('id', 'name')
     list_display_links = ('id', 'name')
     search_fields = ('name',)
-    prepopulated_fields = {"slug": ("name",)} #заполнять slug в ссылках на основе имени
+    prepopulated_fields = {"slug": ("name",)}  # заполнять slug в ссылках на основе имени
+
 
 admin.site.register(Women, WomenAdmin)
 admin.site.register(Category, CategoryAdmin)
